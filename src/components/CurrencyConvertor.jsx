@@ -24,7 +24,7 @@ export const CurrencyConvertor = () => {
   }, [fromCurrency, toCurrency]);
 
   const amountChange = (e) => {
-    const value = e.target.value;
+    const value = parseFloat(e.target.value);
     setAmount(isNaN(value) ? 0 : value);
   };
 
@@ -34,6 +34,13 @@ export const CurrencyConvertor = () => {
   const handletoCurrency = (e) => {
     setToCurrency(e.target.value);
   };
+
+  useEffect(() => {
+    if (exchangeRate !== null) {
+      setConvertor(amount * exchangeRate);
+    }
+  }, [amount, exchangeRate]);
+
   return (
     <>
       <div className="container">
@@ -50,19 +57,37 @@ export const CurrencyConvertor = () => {
         <div className="input_sec">
           <label>From Currency</label>
           <select value={fromCurrency} onChange={handlefromCurrency}>
-            <option value="USD">USD - United State Dollar</option>
             <option value="EUR">EUR - Euro</option>
+            <option value="USD">USD - United State Dollar</option>
             <option value="GBP">GBP - British Pound Sterling</option>
-            <option value="GBP">INR - Indian Rupees</option>
+            <option value="INR">INR - Indian Rupees</option>
+            <option value="CAD">CAD - Canadian Dollar</option>
+            <option value="CHF">CHF - Swiss Franc</option>
+            <option value="KYD">KYD - Cayman Island Dollar</option>
+            <option value="GIP">GIP - Gibraltar Pound</option>
+            <option value="JOD">JOD - Jordanian Dinar</option>
+            <option value="BHD">BHD - Bahraini Dinar</option>
+            <option value="OMR">OMR - Omani Rial</option>
+            <option value="KWD">KWD - Kuwaiti Dinar</option>
+            <option value="AED">AED - United Arab Emirates</option>
           </select>
         </div>
         <div className="input_sec">
           <label>To Currency</label>
           <select value={toCurrency} onChange={handletoCurrency}>
-            <option value="USD">USD - United State Dollar</option>
             <option value="EUR">EUR - Euro</option>
+            <option value="USD">USD - United State Dollar</option>
             <option value="GBP">GBP - British Pound Sterling</option>
-            <option value="GBP">INR - Indian Rupees</option>
+            <option value="INR">INR - Indian Rupees</option>
+            <option value="CAD">CAD - Canadian Dollar</option>
+            <option value="CHF">CHF - Swiss Franc</option>
+            <option value="KYD">KYD - Cayman Island Dollar</option>
+            <option value="GIP">GIP - Gibraltar Pound</option>
+            <option value="JOD">JOD - Jordanian Dinar</option>
+            <option value="BHD">BHD - Bahraini Dinar</option>
+            <option value="OMR">OMR - Omani Rial</option>
+            <option value="KWD">KWD - Kuwaiti Dinar</option>
+            <option value="AED">AED - United Arab Emirates</option>
           </select>
         </div>
         <div className="result">

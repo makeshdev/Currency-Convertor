@@ -6,15 +6,53 @@
   font-family: "Lato", sans-serif;
   box-sizing: border-box;
 }
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffe8a4;
+  color: #ffbf00;
+}
 .container {
+  width: 400px;
+  padding: 30px;
+  background: #fff;
 }
 .container h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  color: #000;
 }
 .input_sec {
+  display: grid;
+  margin-top: 20px;
 }
 .input_sec label {
+  font-size: 13px;
 }
 .input_sec input {
+  padding: 10px;
+  outline: unset;
+  margin-top: 4px;
+  border: 1px solid #ffbf00;
+}
+.input_sec select {
+  padding: 10px;
+  outline: unset;
+  margin-top: 4px;
+  border: 1px solid #ffbf00;
+  background: #fff;
 }
 .result {
+  margin-top: 20px;
+}
+.result p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffbf00;
 }
